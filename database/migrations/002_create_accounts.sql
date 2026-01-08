@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS accounts (
+  id SERIAL PRIMARY KEY,
+  account_number VARCHAR(30) UNIQUE,
+  user_id INTEGER REFERENCES users(id),
+  balance NUMERIC(18,2) DEFAULT 0,
+  currency VARCHAR(10) DEFAULT 'INR',
+  status VARCHAR(20) DEFAULT 'active',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

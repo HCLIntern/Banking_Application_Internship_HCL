@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: digital-banking-backend
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/digital_bank?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: dev
+    password: dev
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 10
+          fetch_size: 50
+    show-sql: false
+  
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+server:
+  port: 5000
+  servlet:
+    context-path: /
+  error:
+    include-message: always
+    include-stacktrace: never
+
+logging:
+  level:
+    root: INFO
+    com.digitalbanking: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"

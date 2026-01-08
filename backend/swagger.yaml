@@ -1,0 +1,6 @@
+# OpenAPI placeholder
+openapi: 3.0.0
+info:
+  title: Digital Banking API
+  version: '0.1.0'
+paths: {}

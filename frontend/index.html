@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digital Banking Frontend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html, body, #root { height: 100%; }
+      body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #e5e7eb; background:
+        radial-gradient(1200px 600px at 50% -20%, rgba(120,119,198,0.35), transparent),
+        linear-gradient(180deg, #0b0b13 0%, #0a0f2a 40%, #0b0633 100%);
+      }
+
+      .auth-layout { min-height: 100vh; display: flex; }
+      .left-panel {
+        flex: 1; min-width: 280px; color: #e5eefc; display: flex; flex-direction: column; padding: 32px;
+        background: linear-gradient(135deg, #0c3b93 0%, #0e49b5 40%, #0b2d6b 100%);
+      }
+      .brand { display:flex; align-items:center; gap:10px; }
+      .brand-badge { height:32px; width:32px; border-radius:8px; background: rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-weight:700; }
+      .hero-title { margin:0; color:#fff; font-size:40px; line-height:1.15; letter-spacing:0.2px; }
+      .hero-desc { margin-top:12px; max-width:420px; color:#dbe7ff; }
+      .left-footer { opacity:.8; font-size:12px; }
+
+      .right-wrap { flex:1; min-width:320px; display:flex; align-items:center; justify-content:center; padding:24px; }
+      .right-card { width:100%; max-width:420px; padding:24px; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,0.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.08); color:#e5e7eb; }
+      .card-title { margin:0 0 6px; font-size:24px; color:#ffffff; }
+      .card-sub { margin:0 0 16px; color:#cbd5e1; }
+
+      .tabs { background: rgba(255,255,255,0.12); border-radius:9999px; padding:4px; display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-bottom:16px; }
+      .tab { border:none; border-radius:9999px; padding:8px 12px; cursor:pointer; font-weight:600; color:#e5e7eb; background:transparent; }
+      .tab.active { background: rgba(255,255,255,0.18); color:#ffffff; }
+
+      .field-label { display:block; font-size:14px; margin-bottom:6px; color:#e2e8f0; }
+      .input-wrap { position:relative; margin-bottom:12px; }
+      .input-icon { position:absolute; left:12px; top:10px; color:#cbd5e1; }
+      .input { width:100%; max-width:100%; box-sizing:border-box; padding:10px 12px 10px 36px; border-radius:10px; border:1px solid rgba(255,255,255,0.18); outline:none; background: rgba(255,255,255,0.08); color:#e5e7eb; }
+      .input::placeholder { color:#94a3b8; }
+      .input:focus { border-color: rgba(236,72,153,0.5); box-shadow: 0 0 0 3px rgba(124,58,237,0.25); }
+
+      /* Hide built-in password reveal/clear UI so only our custom toggle shows */
+      input[type="password"] { -webkit-appearance: none; appearance: none; }
+      input[type="password"]::-ms-reveal { display: none; }
+      input[type="password"]::-ms-clear { display: none; }
+      input[type="password"]::-webkit-contacts-auto-fill-button { visibility: hidden; display: none; }
+      input[type="password"]::-webkit-clear-button { display: none; }
+      input[type="password"]::-webkit-textfield-decoration-container { display: none; }
+      input[type="password"]::-webkit-credentials-auto-fill-button { visibility: hidden; display: none; }
+
+      /* Hide number field spinners (Amount) */
+      input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+      .signin-btn { width:100%; max-width:100%; box-sizing:border-box; background:
+        radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,0.15), rgba(255,255,255,0) 40%),
+        linear-gradient(90deg, #7c3aed, #ec4899);
+        color:#fff; border:none; padding:10px 12px; border-radius:9999px; cursor:pointer; font-weight:800; box-shadow:0 10px 30px rgba(236,72,153,0.35), 0 6px 16px rgba(124,58,237,0.3); }
+      .note { text-align:center; margin-top:12px; font-size:14px; color:#cbd5e1; }
+      .note a { color:#2563eb; text-decoration:underline; }
+
+      .demo-box { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#e5e7eb; padding:12px; border-radius:10px; margin-top:14px; font-size:14px; }
+      .demo-title { font-weight:700; margin-bottom:6px; }
+      .demo-strong { font-weight:600; }
+
+      .form-inner { width:100%; max-width:360px; margin:0 auto; }
+
+      @media (max-width: 900px) {
+        .left-panel { display:none; }
+        .right-wrap { padding:16px; }
+        .right-card { max-width: 480px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script type='module' src='/src/main.jsx'></script>
+  </body>
+  </html>

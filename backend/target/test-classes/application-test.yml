@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: digital-banking-backend
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/digital_bank_test
+    username: dev
+    password: dev
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+  
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+server:
+  port: 5000
+
+logging:
+  level:
+    root: WARN
+    com.digitalbanking: INFO
