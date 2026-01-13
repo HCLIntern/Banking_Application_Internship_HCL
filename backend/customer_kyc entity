@@ -12,26 +12,26 @@ public class Customer_KYC
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "kyc_id",nullable = false)
+    @Column(name = "KYC_ID",nullable = false)
     private Long kycId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "Customer_ID", nullable = false)
     private Customer customer;
 
-    @Column(name = "address_1", nullable = false)
+    @Column(name = "Address_1", nullable = false)
     private String address_1;
 
-    @Column(name = "address_2")
+    @Column(name = "Address_2")
     private String address_2;
 
-    @Column(name = "mail_id", nullable = false)
+    @Column(name = "Mail_ID", nullable = false)
     private String mailId;
 
-    @Column(name = "dob", nullable = false)
+    @Column(name = "DOB", nullable = false)
     private LocalDate dob;
 
-    @Column(name = "notes")
+    @Column(name = "Notes")
     private String notes;
 
 }
