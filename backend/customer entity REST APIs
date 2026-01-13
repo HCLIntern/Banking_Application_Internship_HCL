@@ -1,0 +1,26 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+import jdk.jfr.Name;
+
+@Entity
+@Table(name= "customer")
+public class Customer
+{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id", nullable = false)
+    private Long customerId;
+
+    @Column(name = "customer_name", nullable = false)
+    private String customerName;
+
+    @Column(name = "customer_type", nullable = false)
+    private String customerType;
+
+    @Column(name = "Notes")
+    private String notes;
+
+}
+
