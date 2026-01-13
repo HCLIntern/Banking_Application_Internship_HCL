@@ -1,0 +1,22 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "status")
+
+public class Status
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "status_id", nullable = false)
+    private Long statusId;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+    @Column(name = "request_status", nullable = false)
+    private String requestStatus;
+
+}
