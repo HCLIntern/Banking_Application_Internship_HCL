@@ -2,6 +2,7 @@ package com.ripae_co.REST_APIs.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+
 import java.time.LocalDate;
 
 @Entity
@@ -12,7 +13,7 @@ public class Transactions
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Transaction_ID",nullable = false)
-    private Long transactionId;
+    private Integer transactionId;
 
     @ManyToOne
     @JoinColumn(name = "Source_Customer_ID", referencedColumnName = "Customer_ID")
@@ -30,7 +31,7 @@ public class Transactions
     @JoinColumn(name = "Target_Account_ID", referencedColumnName = "Account_ID")
     private Account targetaccount;
 
-    @Column(name = "Transaction_Amount", nullable = false)
+    @Column(name = "Transaction_Amount", nullable = false, precision = 15, scale = 2)
     private BigDecimal transactionAmount;
 
     @Column(name = "Transaction_Date", nullable = false)
