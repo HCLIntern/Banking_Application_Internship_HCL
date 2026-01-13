@@ -9,7 +9,7 @@ public class Status
 {
     @Id
     @Column(name = "STATUS_ID", nullable = false)
-    private Long statusId;
+    private Integer statusId;
 
     @ManyToOne
     @JoinColumn(name = "Customer_ID", nullable = false)
