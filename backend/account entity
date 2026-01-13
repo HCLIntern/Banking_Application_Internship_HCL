@@ -9,7 +9,7 @@ public class Account
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Account_ID")
-    private Long accountId;
+    private Integer accountId;
 
     @Column(name = "Account_Name", nullable = false)
     private String accountName;
