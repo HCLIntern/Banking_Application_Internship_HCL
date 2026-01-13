@@ -1,0 +1,27 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "account")
+public class Account
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "account_id")
+    private Long accountId;
+
+    @Column(name = "account_name", nullable = false)
+    private String accountName;
+
+    @Column(name = "account_type", nullable = false)
+    private String accountType;
+
+    @Column(name = "remarks")
+    private String remarks;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+}
