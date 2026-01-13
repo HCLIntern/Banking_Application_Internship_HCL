@@ -1,0 +1,38 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "account__balance")
+public class Account__Balance
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "balance_id")
+    private Long balanceId;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
+
+    @Column(name = "balance_amount", nullable = false)
+    private BigDecimal balanceAmount;
+
+    @Column(name = "balance_date", nullable = false)
+    private LocalDate balanceDate;
+
+    @Column(name = "cr_dr_status", nullable = false)
+    private String crDrStatus;
+
+    @Column(name = "cr_dr_amount", nullable = false)
+    private BigDecimal crDrAmount;
+
+    @Column(name = "remarks")
+    private String Remarks;
+}
