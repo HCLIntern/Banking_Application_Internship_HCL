@@ -1,0 +1,31 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "app_user")
+
+public class App_User
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+    @Column(name = "user_name", nullable = false)
+    private String userName;
+
+    @Column(name = "user_type", nullable = false)
+    private String userType;
+
+    @Column(name = "password_hash", nullable = false)
+    private String passwordHash;
+
+    @Column(name = "remarks")
+    private String remarks;
+
+}
