@@ -30,7 +30,7 @@ public class Account__Balance
     @Column(name = "CR_DR_Status", nullable = false)
     private String crDrStatus;
 
-    @Column(name = "CR_DR_AMOUNT", nullable = false)
+    @Column(name = "CR_DR_AMOUNT", nullable = false, precision = 15, scale = 2)
     private BigDecimal crDrAmount;
 
     @Column(name = "Remarks")
