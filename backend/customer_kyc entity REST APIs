@@ -1,0 +1,37 @@
+package com.ripae_co.REST_APIs.entity;
+
+import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "customer_kyc")
+
+public class Customer_KYC
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "kyc_id",nullable = false)
+    private Long kycId;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
+    @Column(name = "address_1", nullable = false)
+    private String address_1;
+
+    @Column(name = "address_2")
+    private String address_2;
+
+    @Column(name = "mail_id", nullable = false)
+    private String mailId;
+
+    @Column(name = "dob", nullable = false)
+    private LocalDate dob;
+
+    @Column(name = "notes")
+    private String notes;
+
+}
