@@ -10,13 +10,13 @@ public class Customer
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id", nullable = false)
+    @Column(name = "Customer_ID", nullable = false)
     private Long customerId;
 
-    @Column(name = "customer_name", nullable = false)
+    @Column(name = "Customer_Name", nullable = false)
     private String customerName;
 
-    @Column(name = "customer_type", nullable = false)
+    @Column(name = "Customer_Type", nullable = false)
     private String customerType;
 
     @Column(name = "Notes")
