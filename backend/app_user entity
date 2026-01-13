@@ -10,7 +10,7 @@ public class App_User
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID", nullable = false)
-    private Long userId;
+    private Integer userId;
 
     @ManyToOne
     @JoinColumn(name = "Customer_ID", nullable = false)
