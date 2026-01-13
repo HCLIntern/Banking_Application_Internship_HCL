@@ -10,29 +10,29 @@ public class Account__Balance
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "balance_id")
+    @Column(name = "Balance_ID")
     private Long balanceId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "Customer_ID", nullable = false)
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "account_id", nullable = false)
+    @JoinColumn(name = "Account_ID", nullable = false)
     private Account account;
 
-    @Column(name = "balance_amount", nullable = false)
+    @Column(name = "Balance_Amount", nullable = false)
     private BigDecimal balanceAmount;
 
-    @Column(name = "balance_date", nullable = false)
+    @Column(name = "Balance_Date", nullable = false)
     private LocalDate balanceDate;
 
-    @Column(name = "cr_dr_status", nullable = false)
+    @Column(name = "CR_DR_Status", nullable = false)
     private String crDrStatus;
 
-    @Column(name = "cr_dr_amount", nullable = false)
+    @Column(name = "CR_DR_AMOUNT", nullable = false)
     private BigDecimal crDrAmount;
 
-    @Column(name = "remarks")
+    @Column(name = "Remarks")
     private String Remarks;
 }
