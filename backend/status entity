@@ -8,15 +8,14 @@ import jakarta.persistence.*;
 public class Status
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "status_id", nullable = false)
+    @Column(name = "STATUS_ID", nullable = false)
     private Long statusId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "Customer_ID", nullable = false)
     private Customer customer;
 
-    @Column(name = "request_status", nullable = false)
+    @Column(name = "REQUEST_STATUS", nullable = false)
     private String requestStatus;
 
 }
