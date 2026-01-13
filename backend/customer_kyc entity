@@ -13,7 +13,7 @@ public class Customer_KYC
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "KYC_ID",nullable = false)
-    private Long kycId;
+    private Integer kycId;
 
     @ManyToOne
     @JoinColumn(name = "Customer_ID", nullable = false)
