@@ -11,34 +11,34 @@ public class Transactions
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id",nullable = false)
+    @Column(name = "Transaction_ID",nullable = false)
     private Long transactionId;
 
     @ManyToOne
-    @JoinColumn(name = "source_customer_id")
+    @JoinColumn(name = "Source_Customer_ID", referencedColumnName = "Customer_ID")
     private Customer sourcecustomer;
 
     @ManyToOne
-    @JoinColumn(name = "target_customer_id")
+    @JoinColumn(name = "Target_Customer_ID", referencedColumnName = "Customer_ID")
     private Customer targetcustomer;
 
     @ManyToOne
-    @JoinColumn(name = "source_account_id")
+    @JoinColumn(name = "Source_Account_ID", referencedColumnName = "Account_ID")
     private Account sourceaccount;
 
     @ManyToOne
-    @JoinColumn(name = "target_account_id")
+    @JoinColumn(name = "Target_Account_ID", referencedColumnName = "Account_ID")
     private Account targetaccount;
 
-    @Column(name = "transaction_amount", nullable = false)
+    @Column(name = "Transaction_Amount", nullable = false)
     private BigDecimal transactionAmount;
 
-    @Column(name = "transaction_date", nullable = false)
+    @Column(name = "Transaction_Date", nullable = false)
     private LocalDate transactionDate;
 
-    @Column(name = "transaction_type", nullable = false)
+    @Column(name = "Transaction_Type", nullable = false)
     private String transactionType;
 
-    @Column(name = "remarks")
+    @Column(name = "Remarks")
     private String remarks;
 }
