@@ -8,20 +8,20 @@ public class Account
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id")
+    @Column(name = "Account_ID")
     private Long accountId;
 
-    @Column(name = "account_name", nullable = false)
+    @Column(name = "Account_Name", nullable = false)
     private String accountName;
 
-    @Column(name = "account_type", nullable = false)
+    @Column(name = "Account_Type", nullable = false)
     private String accountType;
 
-    @Column(name = "remarks")
+    @Column(name = "Remarks")
     private String remarks;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "Customer_ID", nullable = false)
     private Customer customer;
- 
+
 }
