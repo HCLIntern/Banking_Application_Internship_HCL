@@ -11,7 +11,7 @@ public class Account__Balance
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Balance_ID")
-    private Long balanceId;
+    private Integer balanceId;
 
     @ManyToOne
     @JoinColumn(name = "Customer_ID", nullable = false)
