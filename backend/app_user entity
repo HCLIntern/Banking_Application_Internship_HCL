@@ -9,23 +9,23 @@ public class App_User
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "USER_ID", nullable = false)
     private Long userId;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "Customer_ID", nullable = false)
     private Customer customer;
 
-    @Column(name = "user_name", nullable = false)
+    @Column(name = "USER_Name", nullable = false)
     private String userName;
 
-    @Column(name = "user_type", nullable = false)
+    @Column(name = "USER_TYPE", nullable = false)
     private String userType;
 
-    @Column(name = "password_hash", nullable = false)
+    @Column(name = "PASSWORD_HASH", nullable = false)
     private String passwordHash;
 
-    @Column(name = "remarks")
+    @Column(name = "Remarks")
     private String remarks;
 
 }
